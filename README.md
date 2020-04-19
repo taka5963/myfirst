@@ -26,12 +26,21 @@
 |image|text||
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :book
 - has_many :likes
 - has_many :comments
 - has_many :posts_tags
 - has_many  :tags,  through:  :posts_tags
+
+## booksテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|text|null: false|
+### Association
+- has_many :posts
 
 ## tagsテーブル
 |Column|Type|Options|
