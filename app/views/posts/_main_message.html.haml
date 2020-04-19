@@ -1,0 +1,14 @@
+.main-message
+  .main-message__tag-search
+    = form_tag('/search', method: :get, class: 'main-message__tag-search__search-form') do
+      %input.search-form__input{name: "keyword", placeholder: " 検索したいタグを入力", type: "text", value: ""}
+      %button.btn-search{title: "検索", type: "submit"}
+        = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
+  .main-message__contents
+    .main-message__contents__status
+      .main-message__contents__status__user-name
+        taka
+      .main-message__contents__status__date
+        2020/4/18(Sat)
+    .main-message__contents__posts
+      初投稿
