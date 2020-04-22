@@ -4,7 +4,7 @@
       .side-bar__status__detail__name
         = current_user.name
       .side-bar__status__detail__icons
-        = link_to "#", class: "side-bar__status__detail__icons__btn side-bar__status__detail__icons__btn--send" do
+        = link_to new_post_path, class: "side-bar__status__detail__icons__btn side-bar__status__detail__icons__btn--send" do
           = icon('far fa-edit', class: "side-bar__status__detail__icons__btn--icon")
         = link_to edit_user_path(current_user), class: "side-bar__status__detail__icons__btn side-bar__status__detail__icons__btn--cogs" do
           = icon('fas fa-cog', class: "side-bar__status__detail__icons__btn--icon")

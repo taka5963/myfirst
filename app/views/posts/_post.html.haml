@@ -1,0 +1,11 @@
+.main-message__contents__message-box{data: {post: {id: post.id}}}
+  .main-message__contents__message-box__status   
+    .main-message__contents__message-box__status__user-name
+      = post.name
+    .main-message__contents__message-box__status__date
+      = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-message__contents__message-box__posts
+    - if post.text.present?
+      %p.main-message__contents__message-box__posts__content
+        = post.text
+    = image_tag post.image.url, class: 'main-message__contents__message-box__posts__image' if post.image.present?
