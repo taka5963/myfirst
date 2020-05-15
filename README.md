@@ -16,7 +16,7 @@
 できないものかと色々考えた結果、このアプリを作ろうと思いました。
 
 # DEMO
-![現状](./images/8a064892a0207f7a3f8c40ac1074037c)
+![現状](./images/https://github.com/taka5963/myfirst/blob/master/images/%E3%82%AD%E3%83%A3%E3%83%97%E3%83%81%E3%83%A3%E5%8B%95%E7%94%BB%20-%208a064892a0207f7a3f8c40ac1074037c%20-%20Gyazo.webloc)
 
 # 実装予定の機能
 ・画像を添付しての投稿機能  
