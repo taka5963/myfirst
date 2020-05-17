@@ -6,3 +6,15 @@
         = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
   .main-message__contents
     = render @posts
+    -# = render @comments
+  -# .main-message__commentCreate
+  -#   .comContainer
+  -#     = form_for @comment do |form|
+  -#       投稿する
+  -#       .comfield
+  -#         .comfield-input
+  -#           = form.text_field :name, placeholder: " Nickname", autofocus: true
+  -#           = form.file_field :image, class: 'comhidden'
+  -#           = form.text_field :text, placeholder: " text" , rows: "1"
+  -#       .comActions
+  -#         = form.submit "SEND"
