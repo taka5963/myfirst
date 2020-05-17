@@ -17,7 +17,7 @@
 
 # DEMO
 ![現状]  
-(https://gyazo.com/8a064892a0207f7a3f8c40ac1074037c)
+(https://gyazo.com/4112cd50e46d9e828b3fce686b1cd917)
 
 # 実装予定の機能
 ・画像を添付しての投稿機能  
