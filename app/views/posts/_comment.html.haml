@@ -1,0 +1,11 @@
+.com{data: {post: {id: comment.id}}}
+  .comStatus
+    .comUserName
+      = comment.name
+    .comDate
+      = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .comComments
+    - if comment.text.present?
+      %p.comContent
+        = comment.text
+    = image_tag comment.image.url, class: 'comImage' if comment.image.present?
