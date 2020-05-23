@@ -4,11 +4,32 @@
       .side-bar__status__detail__name
         = current_user.name
       .side-bar__status__detail__icons
-        = link_to new_post_path, class: "side-bar__status__detail__icons__btn side-bar__status__detail__icons__btn--send" do
-          = icon('far fa-edit', class: "side-bar__status__detail__icons__btn--icon")
-        = link_to edit_user_path(current_user), class: "side-bar__status__detail__icons__btn side-bar__status__detail__icons__btn--cogs" do
-          = icon('fas fa-cog', class: "side-bar__status__detail__icons__btn--icon")
+        .ui.animated.fade.button
+          = link_to new_post_path do
+            .visible.content
+              新規投稿
+            .hidden.content
+              ここを
+              %br クリック
+        .ui.animated.fade.button
+          = link_to edit_user_path(current_user) do
+            .visible.content
+              アカウント
+              %br 管理
+            .hidden.content
+              ここを 
+              %br クリック
   .side-bar__book-list
     投稿一覧
-  = link_to "#", class: "side-bar__book-list__detail" do
-    三角関数の微分について
+  - @posts.each do |post|
+    = link_to post_path(id: post.id), class: "side-bar__book-list__detail" do
+      %p
+        = post.title
+
+
+
+
+  -# = link_to post_path(id: @posts.ids), class: "side-bar__book-list__detail" do
+  -#   - @posts.each do |post|
+  -#     %p
+  -#       = post.title

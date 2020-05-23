@@ -1,0 +1,28 @@
+.wrapper
+  = render "side_bar"
+
+.main-message
+  .main-message__tag-search
+    = form_tag('/search', method: :get, class: 'main-message__tag-search__search-form') do
+      %input.search-form__input{name: "keyword", placeholder: " 検索したいタグを入力", type: "text", value: ""}
+      %button.btn-search{title: "検索", type: "submit"}
+        = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
+  .main-message__contents
+    = render @post
+    .o3comments
+      %h4
+        ＜コメント一覧＞
+        - @comments.each do |comment|
+          %p
+            -# = link_to posts_path do
+            = comment.user.name
+            = comment.text
+  .main-message__commentCreate
+    - if current_user
+      = form_with model: [@post, @comment], local: true do |f|
+        = f.text_field :text, placeholder: "コメントする", rows: "2"
+        = f.submit "SEND"
+    - else
+      %strong
+        %p
+          ※※※ コメントの投稿には新規登録/ログインが必要です ※※※

@@ -4,8 +4,24 @@
       投稿する
       .field
         .field-input
-          = form.text_field :name, placeholder: " Nickname", autofocus: true
+          = form.text_field :title, placeholder: " Title", autofocus: true
           = form.file_field :image, class: 'hidden'
           = form.text_field :text, placeholder: " text" , rows: "1"
       .actions
         = form.submit "SEND"
+
+.ui.animated.button
+  .visible.content
+    ボタンの文字が
+  .hidden.content
+    変わるんです！！
+
+  
+.ui.vertical.animated.button
+  .visible.content
+    今日の雨のように
+  .hidden.content
+    上から降ってきます
+
+
+
