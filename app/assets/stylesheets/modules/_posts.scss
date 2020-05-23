@@ -32,8 +32,16 @@
       &__icons {
         display: flex;
         justify-content: space-between;
-        &__btn {
-          margin-left: 10px;
+        .fade {
+          width: 115px;
+          height: 50px;
+          .visible {
+            font-size: 13px;
+            text-align: center;
+          }
+          .hidden {
+
+          }
         }
       }
     }

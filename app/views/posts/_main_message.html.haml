@@ -5,16 +5,28 @@
       %button.btn-search{title: "検索", type: "submit"}
         = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
   .main-message__contents
-    = render @posts
-    -# = render @comments
+    -# = render 
+  -#   .o3comments
+  -#     %h4
+  -#       ＜コメント一覧＞
+  -#     - if @comments
+  -#       - @comments.each do |comment|
+  -#         %p
+  -#           %strong
+  -#             = link_to posts_path do
+  -#               - comment.user.nickname
+  -#         - comment.text
+
+
+
+
   -# .main-message__commentCreate
-  -#   .comContainer
-  -#     = form_for @comment do |form|
-  -#       投稿する
-  -#       .comfield
-  -#         .comfield-input
-  -#           = form.text_field :name, placeholder: " Nickname", autofocus: true
-  -#           = form.file_field :image, class: 'comhidden'
-  -#           = form.text_field :text, placeholder: " text" , rows: "1"
-  -#       .comActions
-  -#         = form.submit "SEND"
+  -#   - if current_user
+  -#     = form_with model: [@post, @comment], local: true do |f|
+  -#       = f.text_field :text, placeholder: "コメントする", rows: "2"
+  -#       = f.submit "SEND"
+  -#   - else
+  -#     %strong
+  -#       %p
+  -#         ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
