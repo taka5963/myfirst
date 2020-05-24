@@ -1,0 +1,43 @@
+.main-message {
+  .main-message__contents {
+    .o3comments {
+
+    }
+  }
+  .main-message__commentCreate {
+    height: 90px;
+    background-color: orange;
+    width: calc(100vw - 300px);
+    .nm {
+      width: 100%;
+      display: flex;
+      position: relative;
+      &__o3comfield {
+        width: 100%;
+        height: 50px;
+        margin: 20px 0 20px 40px;
+      }
+      &__o3base {
+        height: 50px;
+        margin: 20px 0 20px 40px;
+        position: absolute;
+        top: 10px;
+        right: 170px;
+        &__maskImage {
+          font-size: 1.3rem;
+          cursor: pointer;
+          &__hidden{
+            display: none;
+          }
+        }
+      }
+      .inverted {
+        height: 50px;
+        width: 100px;
+        cursor: pointer;
+        padding: 0 30px;
+        margin: 20px 40px 20px 15px;
+      }
+    }
+  }
+}
