@@ -1,7 +1,7 @@
 .main-message
   .main-message__tag-search
     = form_tag('/search', method: :get, class: 'main-message__tag-search__search-form') do
-      %input.search-form__input{name: "keyword", placeholder: " 検索したいタグを入力", type: "text", value: ""}
+      %input.search-form__input{name: "keyword", placeholder: " 検索したい投稿を入力", type: "text", value: ""}
       %button.btn-search{title: "検索", type: "submit"}
         = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
   .main-message__contents

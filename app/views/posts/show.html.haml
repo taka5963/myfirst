@@ -4,7 +4,7 @@
 .main-message
   .main-message__tag-search
     = form_tag('/search', method: :get, class: 'main-message__tag-search__search-form') do
-      %input.search-form__input{name: "keyword", placeholder: " 検索したいタグを入力", type: "text", value: ""}
+      %input.search-form__input{name: "keyword", placeholder: " 検索したい投稿を入力", type: "text", value: ""}
       %button.btn-search{title: "検索", type: "submit"}
         = icon('fas fa-search', class: "main-message__tag-search__search-form__icon")
   .main-message__contents
@@ -17,12 +17,35 @@
             -# = link_to posts_path do
             = comment.user.name
             = comment.text
+            = image_tag comment.image.url, class: 'o3o3' if comment.image.present?
+            
+  -# .main-message__commentCreate
+  -#   - if current_user
+  -#     = form_with model: [@post, @comment], local: true do |f|
+  -#       = f.text_field :text, class: 'nm__o3comfield'
+  -#       .nm__o3base
+  -#         = f.label :image, class: 'nm__o3base__maskImage' do
+  -#           = icon('fas', 'camera', class: 'nm__o3base__maskImage__miIcon')
+  -#           = f.file_field :image, class: 'nm__o3base__maskImage__hidden'
+  -#       = f.submit "コメントする", class: "nm__submit"
+  -#   - else
+  -#     %strong
+  -#       %p
+  -#         ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
   .main-message__commentCreate
+    ＜コメント入力欄＞
     - if current_user
       = form_with model: [@post, @comment], local: true do |f|
-        = f.text_field :text, placeholder: "コメントする", rows: "2"
-        = f.submit "SEND"
+        = f.text_field :text, class: 'nm__o3comfield'
+        .nm__o3base2
+          = f.label :image, class: 'nm__o3base2__maskImage' do
+            = icon('fas', 'camera', class: 'nm__o3base2__maskImage__miIcon')
+            = f.file_field :image, class: 'nm__o3base2__maskImage__hidden'
+        = f.submit "送信", class: "nm__submit"
     - else
       %strong
         %p
           ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+
