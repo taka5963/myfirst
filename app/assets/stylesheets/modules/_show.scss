@@ -5,37 +5,44 @@
     }
   }
   .main-message__commentCreate {
-    height: 90px;
+    height: 100px;
     background-color: orange;
     width: calc(100vw - 300px);
+    position: relative;
     .nm {
       width: 100%;
       display: flex;
-      position: relative;
+      // position: relative;
       &__o3comfield {
-        width: 100%;
+        width: 90%;
         height: 50px;
         margin: 20px 0 20px 40px;
+        // position: relative;
       }
-      &__o3base {
+      &__o3base2 {
         height: 50px;
         margin: 20px 0 20px 40px;
         position: absolute;
-        top: 10px;
-        right: 170px;
+        top: 35px;
+        right: 150px;
         &__maskImage {
           font-size: 1.3rem;
           cursor: pointer;
+          &__miIcon {
+          }
           &__hidden{
             display: none;
           }
         }
       }
-      .inverted {
+      &__submit {
+        position: fixed;
         height: 50px;
-        width: 100px;
+        width: 60px;
+        background-color: #38aef0;
         cursor: pointer;
-        padding: 0 30px;
+        color: white;
+        // padding: 0 30px;
         margin: 20px 40px 20px 15px;
       }
     }
